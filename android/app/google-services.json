@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "460973904744",
+    "project_id": "seedisland-1a33a",
+    "storage_bucket": "seedisland-1a33a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:460973904744:android:8b0ad0c878e2520730bcdd",
+        "android_client_info": {
+          "package_name": "com.example.seedisland"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "460973904744-as1h00mdgapt03a0udm7fm1k620rpl62.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-7wS7ID6BU6x2vpZHoBjXiOAq_DgthZw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "460973904744-as1h00mdgapt03a0udm7fm1k620rpl62.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
