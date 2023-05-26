@@ -4,6 +4,7 @@ import 'package:seedisland/Cart.dart';
 import 'package:seedisland/Details.dart';
 import 'package:seedisland/List.dart';
 import 'package:seedisland/drawer.dart';
+import 'package:seedisland/explain.dart';
 
 class detailspage extends StatelessWidget {
   detailspage({super.key});
@@ -101,69 +102,78 @@ class detailspage extends StatelessWidget {
                       crossAxisSpacing: 20),
                   itemCount: 5,
                   itemBuilder: (context, index) {
-                    return Container(
-                      height: 130,
-                      width: 60,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            width: 1, color: Color.fromARGB(0, 12, 3, 3)),
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey,
-                            blurRadius: 8.0, // soften the shadow
-                            spreadRadius: 1.0, //extend the shadow
-                          )
-                        ],
-                      ),
-                      child: SizedBox(
-                        height: 40,
-                        width: 50,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Container(
-                              height: 90,
-                              width: 100,
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      fit: BoxFit.fill,
-                                      image: NetworkImage(images[index]))),
-                            ),
-                            Text(
-                              notes[index],
-                              style: TextStyle(fontSize: 10),
-                            ),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                right: 90,
-                              ),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.black,
-                                    borderRadius: BorderRadius.circular(5)),
-                                child: Text.rich(TextSpan(
-                                    text: 'Rs. ',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 13,
-                                        fontWeight: FontWeight.w300),
-                                    children: <InlineSpan>[
-                                      TextSpan(
-                                        text: price[index],
-                                        style: TextStyle(
-                                            fontSize: 13,
-                                            fontWeight: FontWeight.w300,
-                                            color: Colors.white),
-                                      ),
-                                    ])),
-                              ),
+                    return InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => explainpage(index: index),
+                            ));
+                      },
+                      child: Container(
+                        height: 130,
+                        width: 60,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                              width: 1, color: Color.fromARGB(0, 12, 3, 3)),
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey,
+                              blurRadius: 8.0, // soften the shadow
+                              spreadRadius: 1.0, //extend the shadow
                             )
                           ],
+                        ),
+                        child: SizedBox(
+                          height: 40,
+                          width: 50,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Container(
+                                height: 90,
+                                width: 100,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        fit: BoxFit.fill,
+                                        image: NetworkImage(images[index]))),
+                              ),
+                              Text(
+                                notes[index],
+                                style: TextStyle(fontSize: 10),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  right: 90,
+                                ),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      color: Colors.black,
+                                      borderRadius: BorderRadius.circular(5)),
+                                  child: Text.rich(TextSpan(
+                                      text: 'Rs. ',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 13,
+                                          fontWeight: FontWeight.w300),
+                                      children: <InlineSpan>[
+                                        TextSpan(
+                                          text: price[index],
+                                          style: TextStyle(
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.w300,
+                                              color: Colors.white),
+                                        ),
+                                      ])),
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ),
                     );
